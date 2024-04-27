@@ -1,0 +1,37 @@
+<!-- จงสร้าง Button มีข้อความว่า “Hide”
+เมื่อผู้ใช้ click button ให้ซ่อนข้อความและเปลี่ยนข้อความบน Button เป็น “Show” 
+เมื่อ click button อีกครั้งให้แสดงข้อความและเปลี่ยนข้อความบน Button เป็น Hide -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>Hide</button>
+  <h1>Meawwwwwwwww</h1>
+</body>
+
+<script>
+  let button = document.querySelector('button')
+  let h1 = document.querySelector('h1')
+  function hideText(b) {
+    if (h1.style.display === 'none') {
+      button.textContent = 'Hide'
+      h1.style.display = 'initial'
+    } else {
+      button.textContent = 'Show'
+      h1.style.display = 'none'
+    }
+
+  }
+
+  button.addEventListener('click', hideText)
+
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!-- จงสร้าง Form ที่มี Button สำหรับ submit form 
+  และเขียนคำสั่งเพื่อยกเลิกการส่ง request ไปที่ server เมื่อผู้ใช้งานกด submit form -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="https://google.com">
+
+    <button>Submit</button>
+
+  </form>
+</body>
+
+<script>
+  let form = document.querySelector('form')
+  function nSubmit (b){
+    b.preventDefault()
+  }
+form.addEventListener('submit',nSubmit)
+</script>
+
+</html>

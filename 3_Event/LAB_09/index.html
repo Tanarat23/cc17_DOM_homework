@@ -1,0 +1,63 @@
+<!-- จงสร้าง Input และ Button ดังรูปเมื่อผู้ใช้กรอกเบอร์โทรและกด Check
+ถ้าผู้ใช้ไม่กรอกให้ขึ้นข้อความ Phone Number is required
+ถ้าผู้ใช้กรอกค่าที่ไม่ใช่ตัวเลขให้ขึ้นข้อความ Phone Number is invalid
+ถ้าผู้ใช้กรอกค่าที่มีความยาวไม่เท่ากับ 10 ให้ขึ้นข้อความ Invalid length
+ถ้ากรอกถูกต้องให้ Alert “Your number is valid” -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Number Validation</title>
+  <style>
+    input[type="text"] {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #message {
+      color: red;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="text" id="phoneNumber" placeholder="Enter your phone number">
+  <button onclick="checkPhoneNumber()">Check</button>
+  <p id="message"></p>
+
+  <script>
+    function checkPhoneNumber() {
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      var messageElement = document.getElementById("message");
+      // Check if phone number is empty
+      if (phoneNumber === "") {
+        messageElement.textContent = "Phone Number is required";
+        return;
+      }
+      // Check if phone number contains only digits
+      if (!(/^\d+$/.test(phoneNumber))) {
+        messageElement.textContent = "Phone Number is invalid";
+        return;
+      }
+      if (phoneNumber.length !== 10) {
+        messageElement.textContent = "Invalid length";
+        return;
+      }
+      alert("Your number is valid");
+    }
+  </script>
+
+</body>
+
+</html>

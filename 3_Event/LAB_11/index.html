@@ -1,0 +1,70 @@
+<!-- 
+  จงสร้าง Counter มี button การทำงานและตัวเลขดังรูป
+เมื่อผู้ใช้ click + ให้เพิ่มค่าตัวเลขขึ้น 1
+เมื่อผู้ใช้ click - ให้ลดค่าตัวเลขลง 1
+เมื่อผู้ใช้ click Reset ให้ reset ค่าตัวเลขเป็น 0
+ตัวเลขห้ามติดลบ 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <style>
+    #counter {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="counter">0</div>
+  <button onclick="increaseCounter()">+</button>
+  <button onclick="decreaseCounter()">-</button>
+  <button onclick="resetCounter()">Reset</button>
+
+  <script>
+    var counterValue = 0;
+
+    function updateCounter() {
+      document.getElementById("counter").textContent = counterValue;
+    }
+
+    function increaseCounter() {
+      counterValue++;
+      if (counterValue < 0) {
+        counterValue = 0;
+      }
+      updateCounter();
+    }
+
+    function decreaseCounter() {
+      counterValue--;
+      if (counterValue < 0) {
+        counterValue = 0;
+      }
+      updateCounter();
+    }
+
+    function resetCounter() {
+      counterValue = 0;
+      updateCounter();
+    }
+  </script>
+
+</body>
+
+</html>
